@@ -72,7 +72,7 @@ export function HudTabBar({ state, navigateToTab }: HudTabBarProps) {
         paddingBottom: insets.bottom,
         borderTopWidth: 1,
         borderTopColor: theme.colors.lineDim,
-        backgroundColor: '#070B14',
+        backgroundColor: '#050A14',
       }}
     >
       {left.map((tab) => renderTab(tab.name, tab.label))}

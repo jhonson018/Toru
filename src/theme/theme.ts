@@ -5,7 +5,12 @@
  * con useTheme(). Para cambiar el aspecto, edita aquí. La navegación y las
  * llamadas a Supabase no deberían hacer falta.
  *
- * display: títulos y el indicativo (Orbitron).
+ * Los hex son los de docs/diseno/build.py (navy, panel, line, cyan, cyan2,
+ * amber, orange, text, muted, dim, green). Prioridad: alta naranja, media
+ * ámbar, baja cian. El ámbar pulsado es el inicio del degradado (#FF8A2B).
+ * No hay rojo en la lámina: el aviso usa el naranja.
+ *
+ * display: títulos en Orbitron 700. displayBold: Orbitron 800.
  * body: texto de misión (Rajdhani).
  * mono: etiquetas, cuentas atrás y chips (Share Tech Mono).
  * Los nombres coinciden con las claves que carga src/theme/fonts.ts.
@@ -14,29 +19,29 @@ export const theme = {
   statusBar: 'light',
   colors: {
     background: '#070B14',
-    surface: '#101A2B',
-    text: '#E7F6FF',
-    textMuted: '#8AA4B8',
-    border: '#1A4E63',
-    primary: '#FF9E1B',
-    primaryPressed: '#D98412',
-    primarySoft: 'rgba(55, 214, 255, 0.14)',
-    onPrimary: '#1A1206',
-    danger: '#FF5D73',
-    line: '#37D6FF',
-    lineDim: '#1C6C86',
-    amber: '#FF9E1B',
-    green: '#3DDC97',
-    grid: 'rgba(55, 214, 255, 0.07)',
+    surface: '#0A1424',
+    text: '#EAF1FA',
+    textMuted: '#93A7C0',
+    border: '#2A4466',
+    primary: '#FFB23E',
+    primaryPressed: '#FF8A2B',
+    primarySoft: 'rgba(108, 196, 255, 0.12)',
+    onPrimary: '#070B14',
+    danger: '#FF6B35',
+    line: '#6CC4FF',
+    lineDim: '#3D8BD9',
+    amber: '#FFB23E',
+    green: '#5BE3A6',
+    grid: 'rgba(159, 211, 255, 0.05)',
     status: {
-      todo: '#8AA4B8',
-      in_progress: '#37D6FF',
-      done: '#3DDC97',
+      todo: '#5D708A',
+      in_progress: '#6CC4FF',
+      done: '#5BE3A6',
     },
     priority: {
-      low: '#8AA4B8',
-      medium: '#37D6FF',
-      high: '#FF9E1B',
+      low: '#6CC4FF',
+      medium: '#FFB23E',
+      high: '#FF6B35',
     },
   },
   spacing: {
@@ -64,8 +69,8 @@ export const theme = {
     bold: '700',
   },
   fontFamily: {
-    display: 'Orbitron_600SemiBold',
-    displayBold: 'Orbitron_700Bold',
+    display: 'Orbitron_700Bold',
+    displayBold: 'Orbitron_800ExtraBold',
     body: 'Rajdhani_500Medium',
     bodySemibold: 'Rajdhani_600SemiBold',
     bodyBold: 'Rajdhani_700Bold',

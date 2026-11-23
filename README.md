@@ -43,7 +43,7 @@ src/types/                   Tipos del modelo, alineados con las columnas SQL.
 src/demo/                    Datos de la cabina de demostración.
 supabase/migrations/         Tablas y reglas de seguridad.
 supabase/seed.sql            Dos pilotos y misiones de ejemplo.
-docs/diseno/                 Notas del diseño de Astrak.
+docs/diseno/                 Láminas y tokens del diseño de Astrak.
 ```
 
 Los paréntesis de `(auth)` y `(app)` agrupan rutas y no salen en la URL. `app/(auth)/login.tsx` se abre en `/login`.

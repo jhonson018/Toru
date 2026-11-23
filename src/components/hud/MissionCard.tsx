@@ -48,7 +48,7 @@ export function MissionCard({ task, number, onOpen }: MissionCardProps) {
         <View style={{ flex: 1, gap: theme.spacing.xs }}>
           <AppText variant="label">Fecha límite</AppText>
           <AppText variant="mono">{when.date}</AppText>
-          <AppText variant="mono" style={{ color: theme.colors.line }}>
+          <AppText variant="mono" style={{ color: theme.colors.priority[task.priority] }}>
             {when.countdown}
           </AppText>
         </View>

@@ -41,7 +41,7 @@ export function HudFrame({ children }: { children: ReactNode }) {
       style={{
         borderWidth: 1,
         borderColor: theme.colors.lineDim,
-        backgroundColor: 'rgba(16, 26, 43, 0.92)',
+        backgroundColor: 'rgba(14, 28, 51, 0.92)', // #0E1C33, cardG de build.py
         padding: theme.spacing.md,
         gap: theme.spacing.sm,
       }}

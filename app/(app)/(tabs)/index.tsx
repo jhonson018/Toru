@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { View } from 'react-native';
 
 import { AppText } from '@/components/AppText';
+import { CockpitBackdrop } from '@/components/CockpitBackdrop';
 import { EmptyState } from '@/components/EmptyState';
 import { ErrorView } from '@/components/ErrorView';
 import { FilterChips } from '@/components/hud/FilterChips';
@@ -50,7 +51,7 @@ export default function MissionScreen() {
   }
 
   return (
-    <View style={{ flex: 1, backgroundColor: theme.colors.background }}>
+    <CockpitBackdrop dim={0.22}>
       <HudGrid />
       <StatusLine />
       <PilotHeader callsign={callsign} />
@@ -116,6 +117,6 @@ export default function MissionScreen() {
         <StatBox label="Racha" value={`${stats.streakDays} días`} accent />
         <StatBox label="XP piloto" value={formatXp(stats.xp)} />
       </View>
-    </View>
+    </CockpitBackdrop>
   );
 }

@@ -2,6 +2,7 @@ import { type ReactNode } from 'react';
 import { KeyboardAvoidingView, Platform, ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { CockpitBackdrop } from '@/components/CockpitBackdrop';
 import { HudGrid } from '@/components/hud/HudGrid';
 import { useTheme } from '@/theme/ThemeProvider';
 
@@ -24,25 +25,27 @@ export function Screen({ children, scroll = false, padded = true }: ScreenProps)
 
   if (!scroll) {
     return (
-      <View style={[{ flex: 1, backgroundColor: theme.colors.background }, padding]}>
+      <CockpitBackdrop>
         <HudGrid />
-        {children}
-      </View>
+        <View style={[{ flex: 1 }, padding]}>{children}</View>
+      </CockpitBackdrop>
     );
   }
 
   return (
-    <KeyboardAvoidingView
-      style={{ flex: 1, backgroundColor: theme.colors.background }}
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-    >
-      <HudGrid />
-      <ScrollView
-        keyboardShouldPersistTaps="handled"
-        contentContainerStyle={[{ gap: theme.spacing.md }, padding]}
+    <CockpitBackdrop>
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
-        {children}
-      </ScrollView>
-    </KeyboardAvoidingView>
+        <HudGrid />
+        <ScrollView
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={[{ gap: theme.spacing.md }, padding]}
+        >
+          {children}
+        </ScrollView>
+      </KeyboardAvoidingView>
+    </CockpitBackdrop>
   );
 }

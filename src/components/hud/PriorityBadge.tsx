@@ -8,13 +8,14 @@ import type { TaskPriority } from '@/types/database';
 export function PriorityBadge({ priority }: { priority: TaskPriority }) {
   const theme = useTheme();
   const filled = priority === 'high';
+  const color = theme.colors.priority[priority];
 
   return (
     <View
       style={{
         borderWidth: 1,
-        borderColor: theme.colors.amber,
-        backgroundColor: filled ? theme.colors.amber : 'transparent',
+        borderColor: color,
+        backgroundColor: filled ? color : 'transparent',
         paddingHorizontal: theme.spacing.sm,
         paddingVertical: 3,
       }}
@@ -22,7 +23,7 @@ export function PriorityBadge({ priority }: { priority: TaskPriority }) {
       <AppText
         variant="label"
         style={{
-          color: filled ? theme.colors.onPrimary : theme.colors.amber,
+          color: filled ? theme.colors.onPrimary : color,
           fontSize: 10,
         }}
       >
